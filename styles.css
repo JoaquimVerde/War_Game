@@ -1,0 +1,524 @@
+
+
+header, a{
+    color: green;
+    font-family: Cochin;
+    font-size: xx-large;
+    text-align: center; 
+    text-decoration: none;
+    
+    
+    
+}
+
+body {
+    background-color: azure;
+}
+
+#title_image {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 5%;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+nav, a{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.board{
+    display: grid;
+    margin-top: 30px;
+
+    grid-template-columns: 1fr [card-container-1] auto 2fr 2fr [card-container-2] auto 1fr;
+    grid-template-rows: 2rem 2.5rem 17rem 17rem;
+}
+.board > .player1_points {
+    grid-column-start: card-container-1;
+    grid-row-start: 1;
+    text-align: center;
+    align-self: flex-end;
+}
+.board > .player2_points {
+    grid-column-start: card-container-2;
+    grid-row-start: 1;
+    text-align: center;
+    align-self: flex-end;
+}
+.board > .blue_deck {
+    grid-column-start: card-container-2;
+    grid-row-start: 3;
+    height: 15rem;
+    align-self: center;
+}
+.board > .red_deck {
+    grid-column-start: card-container-1;
+    grid-row-start: 3;
+    height: 15rem;
+    align-self: center;   
+}
+.position-player-one{
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+.position-player-two{
+    grid-column-start: 4;
+    grid-row-start: 2;
+}
+.position-player-points-one {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    align-self: center;    
+    margin-left: auto;
+    margin-right: auto;
+}
+.position-player-points-two {
+    grid-column-start: 5;
+    grid-row-start: 2;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;   
+}
+.player-one-hand-length {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    align-self: center;    
+    margin-left: auto;
+    margin-right: auto;
+}
+.player-two-hand-length {
+    grid-column-start: 4;
+    grid-row-start: 1;
+    align-self: center;    
+    margin-left: auto;
+    margin-right: auto;
+}
+.war-position-one{
+    grid-row-start: 4;
+    grid-column-start: 3;
+}
+.war-position-one-second-card{
+    grid-row-start: 4;
+    grid-column-start: 3;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.war-position-two{
+    grid-row-start: 4;
+    grid-column-start: 4;
+}
+.war-position-two-second-card{
+    grid-row-start: 4;
+    grid-column-start: 4;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+
+.cards {
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+
+
+.cards > div {
+    display: grid;
+    width: 10rem;
+    height: 15rem;
+    gap: 8px 10px;
+    background-color: white;
+    grid-template-columns: 2.2rem 1rem 1rem 1rem 2.2rem;
+    grid-template-rows: 2.8rem 1fr 1fr 1fr 2.8rem;
+    padding: 5px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    border: 2px solid black;
+    border-radius: 0.4em;
+    z-index: 10;
+}
+
+.cards > .card9, .cards > .card10 {
+    grid-template-rows: 2.8rem 1fr 1fr 1fr 1fr 2.8rem;    
+}
+.cards > .cardA, .cards > .cardJ, .cards > .cardQ, .cards > .cardK {
+    grid-template-columns: 2.2rem 4.2rem 2.2rem;
+    grid-template-rows: 2.8rem 3fr 2.8rem;
+
+}
+
+.token {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.token-top {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    justify-content: end;
+}
+
+.token-bottom {
+    grid-row-start: 5;
+    grid-column-start: 5;
+    transform: rotateX(180deg);
+}
+
+.card9 .token-bottom, .card10 .token-bottom {
+    grid-row-start: 6;
+}
+
+.cardA .token-bottom, .cardJ .token-bottom, .cardQ .token-bottom, .cardK .token-bottom {
+    grid-row-start: 3;
+    grid-column-start: 3;
+}
+
+.suit {
+    align-self: center;
+    text-align: center;
+}
+
+.suit-middle {
+    grid-row-start: 3;
+}
+
+.suit-top {
+    grid-row-start: 2;
+}
+
+.suit-bottom {
+    grid-row-start: 4;
+    transform: rotateX(180deg);
+}
+
+.suit-left {
+    grid-column-start: 2;
+}
+
+.suit-right {
+    grid-column-start: 4;
+}
+
+.card9 .suit-middle, .card10 .suit-middle {
+    grid-row: 3 / 5;
+}
+
+.suit-center {
+    grid-column: 3;
+}
+
+.suit-bottom-middle {
+    grid-row: 3 / 5;
+    transform: rotateX(180deg);
+}
+
+.suit-top-middle {
+    grid-row: 2 / 4;
+}
+
+.card9 .suit-bottom-middle, .card10 .suit-bottom-middle {
+    grid-row: 4;
+    transform: rotateX(180deg);
+}
+
+.card9 .suit-top-middle, .card10 .suit-top-middle {
+    grid-row-start: 3;
+}
+
+.card9 .suit-bottom, .card10 .suit-bottom {
+    grid-row-start: 5;
+}
+
+.card10 .suit-bottom-center{
+    grid-row-start: 4;
+    grid-row-end: 6;
+    transform: rotateX(180deg);
+}
+
+.card10 .suit-top-center{
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.card2 .suit-bottom {
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+.card2 .suit-top {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.suit-larger {
+    font-size: 4rem;
+}
+
+.cardA .suit-center, .cardJ .suit-center, .cardQ .suit-center, .cardK .suit-center{
+    grid-column-start: 2;
+}
+
+.cardA .suit-middle, .cardJ .suit-middle, .cardQ .suit-middle, .cardK .suit-middle{
+    grid-row-start: 2;
+}
+
+.image-size {
+    width: 100%;
+    height: 100%;   
+}
+#play-round-button {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    border: 2px ridge black;
+    
+}
+
+#restart-button {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    justify-content: center;
+    border: 2px ridge black;
+    
+}
+
+#end-message {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: auto;
+    justify-content: center;
+    font-size: 40px;
+    font-style: italic;
+    font-family: cursive;
+    color: #3c8f3b;
+
+}
+
+.card-slide{
+    animation: 500ms slidein;
+    
+}
+@keyframes slidein {
+    from {
+        margin-top: 10%;
+        width: 200%;
+      }
+    
+      to {
+        margin-bottom: 100%;
+        width: 100%;
+      }
+   
+}
+.card-slide-left{
+    animation: 500ms slideinLeft;
+    
+}
+@keyframes slideinLeft {
+    from {
+        margin-left:0%;
+        margin-top: 10%;
+        width: 0%;
+      }
+    
+    to {
+        margin-right: 100%;  
+        width: 100%;
+      }
+   
+}
+
+.card-war-slide-left{
+    animation: 500ms slideWarInLeft;
+    
+}
+@keyframes slideWarInLeft {
+    from {
+        margin-left: 0%;
+        margin-top: -50%;
+        width: 0%;
+      }
+    
+    to {
+        margin-right: 100%;  
+        width: 100%;
+      }
+   
+}
+
+.card-war-slide-right{
+    animation: 500ms slideWarInRight;
+    
+}
+@keyframes slideWarInRight {
+    from {    
+        margin-top: -50%;
+        width: 200%;
+
+      }
+    
+    to {
+        margin-bottom: 100%;  
+        width: 100%;
+      }
+   
+}
+
+
+
+
+@media screen and (max-width: 768px){
+
+    .board{
+        display: grid;
+        margin-top: 30px;
+    
+        grid-template-columns: 1fr [card-container-1] auto 2fr 2fr [card-container-2] auto 1fr;
+        grid-template-rows: 2rem 2.5rem 10rem 10rem;
+    }
+
+    .cards > div {
+        display: grid;
+        width: 5rem;
+        height: 7.5rem;
+        gap: 8px 10px;
+        background-color: white;
+        grid-template-columns: 1rem 0.1rem 0.1rem 0.1rem 1rem;
+        grid-template-rows: 0.07rem 1fr 1fr 1fr 0.07rem;
+        padding: 5px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        margin-left: 4px;
+        margin-right: 4px;
+        border: 2px solid black;
+        border-radius: 0.4em;
+        z-index: 10;
+    }
+    .cards > .card9, .cards > .card10 {
+        grid-template-rows: 1rem 1fr 1fr 1fr 1fr 1rem;  
+         
+    }
+    .cards > .cardA, .cards > .cardJ, .cards > .cardQ, .cards > .cardK {
+        grid-template-columns: 0.5rem 1fr 0.5rem;
+        grid-template-rows: 0.5rem 1fr 0.5rem;
+    }
+
+    .board > .player1_points {
+        grid-column-start: card-container-1;
+        grid-row-start: 1;
+        text-align: center;
+        align-self: flex-end;
+        font-size: 0.7rem;
+    }
+    .board > .player2_points {
+        grid-column-start: card-container-2;
+        grid-row-start: 1;
+        text-align: center;
+        align-self: flex-end;
+        font-size: 0.7rem;
+    }
+    .player-one-hand-length {
+        grid-column-start: 3;
+        grid-row-start: 1;
+        align-self: center;    
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.7rem;
+    }
+    .player-two-hand-length {
+        grid-column-start: 4;
+        grid-row-start: 1;
+        align-self: center;    
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.7rem;
+    }
+
+    .board > .blue_deck {
+        grid-column-start: card-container-2;
+        grid-row-start: 3;
+        height: 5rem;
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .board > .red_deck {
+        grid-column-start: card-container-1;
+        grid-row-start: 3;
+        height: 5rem;
+        align-self: center; 
+        margin-left: auto;
+        margin-right: auto;  
+    }
+
+    .token {
+        text-align: center;
+        font-size: 0.5em;
+    }
+
+    .cardA .suit-larger {
+        font-size: 2rem;
+    }
+
+    .suit{
+        font-size: 0.5rem;
+    }
+
+    #end-message {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        margin-bottom: auto;
+        justify-content: center;
+        font-size: 40px;
+        font-style: italic;
+        font-family: cursive;
+        color: #3c8f3b;
+    
+    }
+
+    #play-round-button {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        border: 2px ridge black;
+        
+    }
+
+
+    
+    
+
+    
+}
+
+
