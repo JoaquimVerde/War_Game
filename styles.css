@@ -113,6 +113,7 @@ nav, a{
 .war-position-two{
     grid-row-start: 4;
     grid-column-start: 4;
+    justify-content: baseline;
 }
 .war-position-two-second-card{
     grid-row-start: 4;
@@ -284,6 +285,7 @@ nav, a{
     font-size: 15px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 3rem;
     justify-content: center;
     border: 2px ridge black;
     
@@ -295,7 +297,7 @@ nav, a{
     font-size: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15px;
+    margin-top: 2rem;
     justify-content: center;
     border: 2px ridge black;
     
@@ -507,6 +509,7 @@ nav, a{
         display: flex;
         flex-wrap: wrap;
         font-size: 30px;
+        margin-top: 2rem;
         margin-left: auto;
         margin-right: auto;
         justify-content: center;
