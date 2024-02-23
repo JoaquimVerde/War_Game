@@ -113,7 +113,6 @@ nav, a{
 .war-position-two{
     grid-row-start: 4;
     grid-column-start: 4;
-    justify-content: baseline;
 }
 .war-position-two-second-card{
     grid-row-start: 4;
